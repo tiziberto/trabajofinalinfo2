@@ -56,7 +56,7 @@ int main(){
 	struct city* headsantafe=NULL; /*Head para Santa Fe*/
 	struct city* temp= NULL;
 	struct city* new_node=NULL;
-    struct city ciudad; /*Estructura auxiliar para cartar datos*/
+    struct city ciudad; /*Estructura auxiliar para cargar datos*/
     struct measurement temps;
     struct timestamp tiempo;
 	struct listaciudades* head_ciudades=NULL; /*Estructura de ciudades*/
