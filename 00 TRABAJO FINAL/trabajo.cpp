@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string>
+#include <string.h>
 #include "Informacion.h"
 using namespace std;
 
@@ -185,7 +185,7 @@ int main(){
 	/*MENU DE OPCIONES*/
 	do
 	{
-		printf("\nIngrese la opcion que desee:\n•a- Total de las muestras almacenadas en las listas pertenecientes a cada provincia\n•b- Temperatura promedio de cada provincia\n•c- Temperatura promedio de cada ciudad\n•d- Ciudad mas calida de cada provincia\n•e- Ciudad mas fria de cada provincia\n•f- Dia mas frio de cada provincia\n•g- Dia mas calido de cada ciudad\n•h- Mejor provincia para el cultivo de pimientos\n•s- salir del programa\n");
+		printf("\nIngrese la opcion que desee:\n»a- Total de las muestras almacenadas en las listas pertenecientes a cada provincia\n»b- Temperatura promedio de cada provincia\n»c- Temperatura promedio de cada ciudad\n»d- Ciudad mas calida de cada provincia\n»e- Ciudad mas fria de cada provincia\n»f- Dia mas frio de cada provincia\n»g- Dia mas calido de cada ciudad\n»h- Mejor provincia para el cultivo de pimientos\n»s- salir del programa\n");
 		scanf(" %c", &opcion);
 		switch (opcion)
 		{
