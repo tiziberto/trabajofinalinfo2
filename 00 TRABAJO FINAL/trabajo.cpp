@@ -193,7 +193,7 @@ int main(){
 				printf("\nLa cantidad de muestras tomadas para cada provincia son:\nMendoza: %d\nSanta Fe: %d\nCordoba: %d\n", mend.getCant_tomas(), stafe.getCant_tomas(), cor.getCant_tomas());
 			break;
 			case 'b':case 'B':
-				printf("\nTemperaturas promedio de cada provincia:\nMendoza: %f\nCordoba: %f\nSanta Fe: %f\n", (mend.getPromedio()), (cor.getPromedio()), (stafe.getPromedio()));
+				printf("\nTemperaturas promedio de cada provincia:\nMendoza: %fºC\nCordoba: %fºC\nSanta Fe: %fºC\n", (mend.getPromedio()), (cor.getPromedio()), (stafe.getPromedio()));
 			break;
 			case 'c':case 'C':
 				PromedioCiudades(head_ciudades);
@@ -303,15 +303,15 @@ void CiudadCalidaProvincia(struct listaciudades *head_ciudades, Informacion mend
 		while(temp_ciudades!=NULL){
 			if (temp_ciudades->provincia==3&&CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont)==mend.getCiudadCalida())
 			{
-				printf("En Mendoza la Ciudad: %s\tCon una temperatura promedio de %f\n", temp_ciudades->nombreciudad,	CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont));
+				printf("En Mendoza la Ciudad: %s\tCon una temperatura promedio de %fºC\n", temp_ciudades->nombreciudad,	CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont));
 			}
 			if (temp_ciudades->provincia==2&&CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont)==stafe.getCiudadCalida())
 			{
-				printf("En Santa Fe la Ciudad: %s\tCon una temperatura promedio de %f\n", temp_ciudades->nombreciudad,	CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont));
+				printf("En Santa Fe la Ciudad: %s\tCon una temperatura promedio de %fºC\n", temp_ciudades->nombreciudad,	CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont));
 			}
 			if (temp_ciudades->provincia==1&&CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont)==cor.getCiudadCalida())
 			{
-				printf("En Cordoba la Ciudad: %s\tCon una temperatura promedio de %f\n", temp_ciudades->nombreciudad,	CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont));
+				printf("En Cordoba la Ciudad: %s\tCon una temperatura promedio de %fºC\n", temp_ciudades->nombreciudad,	CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont));
 			}
 			temp_ciudades = temp_ciudades->next;
 		}						
@@ -327,7 +327,7 @@ void PromedioCiudades(struct listaciudades *head_ciudades){
 		temp_ciudades=head_ciudades;
 		printf("\nTemperatura promedio de cada ciudad:");
 		while(temp_ciudades!=NULL){
-			printf("\nTemperatura promedio: %f\tCiudad: %s\t", CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont), temp_ciudades->nombreciudad);
+			printf("\nTemperatura promedio: %fºC\tCiudad: %s\t", CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont), temp_ciudades->nombreciudad);
 			temp_ciudades = temp_ciudades->next;
 		}						
 	}
@@ -343,7 +343,7 @@ void DiaMasFrioProvincia(struct city *head, Informacion info){
 		while(temp!=NULL){
 			if (temp->temperaturas.temperatura==info.getTempMin())
 			{
-				printf("%s: Fecha: %d/%d\tTemperatura: %f\tCiudad:%s\n", info.getNombre().c_str() , temp->temperaturas.fecha.day, temp->temperaturas.fecha.month, info.getTempMin(), temp->cityname);
+				printf("%s: Fecha: %d/%d\tTemperatura: %fºC\tCiudad:%s\n", info.getNombre().c_str() , temp->temperaturas.fecha.day, temp->temperaturas.fecha.month, info.getTempMin(), temp->cityname);
 			}
 			temp=temp->next;
 		}	
@@ -361,15 +361,15 @@ void CiudadMasFriaProvincia(struct listaciudades *head_ciudades, Informacion men
 		while(temp_ciudades!=NULL){
 			if (temp_ciudades->provincia==3&&CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont)==mend.getCiudadFria())
 			{
-				printf("En Mendoza la Ciudad: %s\tCon una temperatura promedio de %f\n", temp_ciudades->nombreciudad,	CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont));
+				printf("En Mendoza la Ciudad: %s\tCon una temperatura promedio de %fºC\n", temp_ciudades->nombreciudad,	CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont));
 			}
 			if (temp_ciudades->provincia==2&&CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont)==stafe.getCiudadFria())
 			{
-				printf("En Santa Fe la Ciudad: %s\tCon una temperatura promedio de %f\n", temp_ciudades->nombreciudad,	CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont));
+				printf("En Santa Fe la Ciudad: %s\tCon una temperatura promedio de %fºC\n", temp_ciudades->nombreciudad,	CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont));
 			}
 			if (temp_ciudades->provincia==1&&CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont)==cor.getCiudadFria())
 			{
-				printf("En Cordoba la Ciudad: %s\tCon una temperatura promedio de %f\n", temp_ciudades->nombreciudad,	CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont));
+				printf("En Cordoba la Ciudad: %s\tCon una temperatura promedio de %fºC\n", temp_ciudades->nombreciudad,	CalcularTempPromedio(temp_ciudades->suma_temperatura, temp_ciudades->cont));
 			}
 			temp_ciudades = temp_ciudades->next;
 		}						
@@ -385,7 +385,7 @@ void DiasMasCalidosCiudad(struct listaciudades *head_ciudades){
 	}else{
 		printf("\nDia mas calido de cada ciudad:");
 		while(temp_ciudades!=NULL){
-			printf("\nTemperatura mas calida: %f\tFecha: %d/%d\tCiudad: %s\t", temp_ciudades->temp_mascalida, temp_ciudades->dia_mascalido, temp_ciudades->mes_dia_mascalido, temp_ciudades->nombreciudad);
+			printf("\nTemperatura mas calida: %fºC\tFecha: %d/%d\tCiudad: %s\t", temp_ciudades->temp_mascalida, temp_ciudades->dia_mascalido, temp_ciudades->mes_dia_mascalido, temp_ciudades->nombreciudad);
 			temp_ciudades = temp_ciudades->next;
 		}						
 	}
@@ -437,6 +437,6 @@ void MejorProvinciaPimientos(Informacion mend, Informacion stafe, Informacion co
 	}
 	if (comparador_temps>3) /*Aviso de diferencia de temperatura alta*/
 	{
-		printf("Aunque la diferencia de temperatura promedio con la temperatura ideal es de %f grados\n", comparador_temps);
+		printf("Aunque la diferencia de temperatura promedio con la temperatura ideal es de %fºC\n", comparador_temps);
 	}
 }
