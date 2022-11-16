@@ -339,7 +339,7 @@ void DiaMasFrioProvincia(struct city *head, Informacion info){
 		printf("Lista vacia\n");
 		exit(1);
 	}else{
-		city*temp=head;
+		temp=head;
 		while(temp!=NULL){
 			if (temp->temperaturas.temperatura==info.getTempMin())
 			{
